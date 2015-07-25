@@ -20,12 +20,12 @@ Game::Game()
 	SpawnCarLane(Cars::CAR_TYPE::truck, 3, 486, 50, 30, 170, -1.5f, 4);
 
 	SpawnLogLane(Logs::LOG_TYPE::turtle1, 5, 486, 30, 30, 130, -1.0f, 6, 3, 30);
-	SpawnLogLane(Logs::LOG_TYPE::log1, 3, 486, 50, 30, 220, 2.0f, 8, 1, 0);
-	SpawnLogLane(Logs::LOG_TYPE::log2, 5, 486, 150, 30, 130, 1.0f, 7, 1, 0);
+	SpawnLogLane(Logs::LOG_TYPE::log2, 5, 486, 50, 30, 130, 1.0f, 7, 1, 0);
+	SpawnLogLane(Logs::LOG_TYPE::log1, 3, 486, 150, 30, 220, 2.0f, 8, 1, 0);
 	SpawnLogLane(Logs::LOG_TYPE::turtle2, 5, 486, 30, 30, 130, -1.0f, 9, 2, 30);
 	SpawnLogLane(Logs::LOG_TYPE::log3, 5, 486, 100, 30, 130, 1.3f, 10, 1, 0);
 
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		Frog* temp = new Frog();
 		frogs.push_back(temp);
@@ -86,7 +86,7 @@ void Game::SpawnLogLane(Logs::LOG_TYPE type, int numInLane,int startPos,
 
 bool Game::CollisionWithCars()
 {
-	if (currentFrog >= 4)
+	if (currentFrog >= 5)
 		return false;
 
 	for (int i = 0; i < cars.size(); i++)
@@ -103,7 +103,7 @@ bool Game::CollisionWithCars()
 			currentFrog++;
 
 			// Post
-			if (currentFrog < 4)
+			if (currentFrog < 5)
 			{
 				frogs[currentFrog]->Spawn();
 			}
@@ -123,12 +123,16 @@ bool Game::CollisionWithLogs()
 {
 	for (int i = 0; i < logs.size(); i++)
 	{
-		if (frogs[currentFrog]->GetRect()->CollidesWith(logs[i]->GetRect()))
+		Rectangle* frogRect = frogs[currentFrog]->GetRect();
+		Rectangle* logRect = logs[i]->GetRect();
+		if (frogRect->CollidesWith(logRect))
 		{
 			std::cout << "On a log" << std::endl;
 
-			frogs[currentFrog]->SetPosition(logs[i]->GetX(), logs[i]->GetY());
+			frogs[currentFrog]->SetPosition(logs[i]->GetX(), frogs[currentFrog]->GetY());
+
+			return true;
 		}
-		return true;
 	}
+	return false;
 }
