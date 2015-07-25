@@ -16,12 +16,13 @@ public:
 private:
 	static const int laneOffsetY = 36;
 
+	bool gameOver;
+	int currentFrog;
 	std::vector<Cars*> cars;
 	std::vector<Logs*> logs;
 	std::vector<Frog*> frogs;
 
-	int currentFrog;
-	bool gameOver;
+	void SetGameOver();
 
 	void SpawnCarLane(Cars::CAR_TYPE type, int numInLane, 
 		int startPos, int sizeX, int sizeY, int offset, 
@@ -32,6 +33,6 @@ private:
 		float laneSpeed, int laneID, int nbSqueezed, int minOffset);
 
 	bool CollisionWithCars();
-	bool CollisionWithLogs();
+	bool CollisionWithLogs(Logs** outLog);
 };
 

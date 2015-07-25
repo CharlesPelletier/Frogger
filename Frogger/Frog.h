@@ -15,12 +15,14 @@ public:
 
 	//bool GetIsActive() { return isActive; }
 	//void SetIsActive(bool isActive) { this->isActive = isActive; }
+	void SetMatchingSpeed(float speed){ matchingSpeed = speed; }
 
 	void Die();
 	void Spawn();
 
 private:
 	bool isActive;
+	float matchingSpeed;
 	static const float speed;
 };
 

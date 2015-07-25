@@ -7,11 +7,13 @@ class Logs :
 {
 public:
 	enum LOG_TYPE { turtle1, log1, log2, turtle2, log3 };
-
+	Logs(){}
 	Logs(LOG_TYPE type, float speed, Vector2D& startPos, Vector2D& size);
 	~Logs();
 
 	void Update();
+
+	float GetSpeed() { return speed; }
 
 private:
 	static std::string TURTLE1_PATH;

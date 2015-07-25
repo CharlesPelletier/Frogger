@@ -38,6 +38,7 @@ Cars::~Cars()
 void Cars::Update()
 {
 	Obstacle::Update();
+
 	SetPosition(GetX() + speed, GetY());
 
 	if (speed > 0)

@@ -5,6 +5,7 @@ const float Frog::speed = 36.0f;
 Frog::Frog()
 	: Obstacle(FROG_PATH, 244, 468, 30, 30)
 	, isActive(false)
+	, matchingSpeed(0.f)
 {
 	SetVisible(false);
 }
@@ -16,10 +17,10 @@ Frog::~Frog()
 
 void Frog::Update()
 {
-	Obstacle::Update();
-
 	if (isActive)
 	{
+		std::cout << "Y: " << GetY() << std::endl;
+		
 		// Inputs pour bouger la frog
 		if (Engine::GetInstance()->GetInput()->IsKeyPressed(SDL_SCANCODE_W))
 		{
@@ -40,7 +41,10 @@ void Frog::Update()
 		{
 			SetPosition(GetX() + speed * 0.75, GetY());
 		}
+
+		SetPosition(GetX() + matchingSpeed, GetY());
 	}
+	Obstacle::Update();
 }
 
 void Frog::Die()
@@ -54,5 +58,4 @@ void Frog::Spawn()
 {
 	isActive = true;
 	isVisible = true;
-
 }

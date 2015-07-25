@@ -40,14 +40,63 @@ Game::~Game()
 
 }
 
+void Game::SetGameOver()
+{
+	// Pre
+	frogs[currentFrog]->Die();
+
+	currentFrog++;
+
+	// Post
+	if (currentFrog < 5)
+	{
+		frogs[currentFrog]->Spawn();
+	}
+	else
+	{
+		// GameOver
+		gameOver = true;
+	}
+}
+
 void Game::Update()
 {
-	CollisionWithCars();
+	if (CollisionWithCars())
+	{
+		SetGameOver();
+	}
 
 	if (gameOver)
 		return;
 
-	CollisionWithLogs();
+	const float midLimit_ScreenCoord = 252;
+	if(frogs[currentFrog]->GetY() < midLimit_ScreenCoord)
+	{
+		Logs* l;
+		if (CollisionWithLogs(&l))
+		{
+			frogs[currentFrog]->SetMatchingSpeed(l->GetSpeed());
+		}
+		else
+		{
+			const float topLimit_ScreenCoord = 60.0f;
+
+			// If is top zone.
+			if (frogs[currentFrog]->GetY() < topLimit_ScreenCoord)
+			{
+				frogs[currentFrog]->SetMatchingSpeed(0.f);
+			}
+			else
+			{
+				SetGameOver();
+			}
+		}
+	}
+	else
+	{
+		// If is under mid line, in the cars zone.
+		frogs[currentFrog]->SetMatchingSpeed(0.f);
+	}
 }
 
 // Spawn les Cars dans leur ligne respective
@@ -95,31 +144,13 @@ bool Game::CollisionWithCars()
 		Rectangle* carRect = cars[i]->GetRect();
 		if (frogRect->CollidesWith(carRect))
 		{
-			std::cout << "Hit by a car" << std::endl;
-
-			// Pre
-			frogs[currentFrog]->Die();
-
-			currentFrog++;
-
-			// Post
-			if (currentFrog < 5)
-			{
-				frogs[currentFrog]->Spawn();
-			}
-			else
-			{
-				// GameOver
-				gameOver = true;
-			}
-
 			return true;
 		}
 	}
 	return false;
 }
 
-bool Game::CollisionWithLogs()
+bool Game::CollisionWithLogs(Logs** outLog)
 {
 	for (int i = 0; i < logs.size(); i++)
 	{
@@ -127,10 +158,7 @@ bool Game::CollisionWithLogs()
 		Rectangle* logRect = logs[i]->GetRect();
 		if (frogRect->CollidesWith(logRect))
 		{
-			std::cout << "On a log" << std::endl;
-
-			frogs[currentFrog]->SetPosition(logs[i]->GetX(), frogs[currentFrog]->GetY());
-
+			*outLog = logs[i];
 			return true;
 		}
 	}
