@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Frogger", "Frogger\Frogger.vcxproj", "{1AEEA8E8-6674-4981-BF3E-BC499E0F7B9B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "..\..\bart-sdl-engine-e15\src\Engine\Engine.vcxproj", "{D29C55C5-0271-4263-BFBA-75AC0A2A25CB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "..\bart-sdl-engine-e15\src\Engine\Engine.vcxproj", "{D29C55C5-0271-4263-BFBA-75AC0A2A25CB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TP1_Library", "..\..\bart-sdl-engine-e15\dependencies\TP1_Library\TP1_Library.vcxproj", "{CBD19DD0-E306-4841-82A2-878DF815352D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TP1_Library", "..\bart-sdl-engine-e15\dependencies\TP1_Library\TP1_Library.vcxproj", "{CBD19DD0-E306-4841-82A2-878DF815352D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
