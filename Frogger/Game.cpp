@@ -21,9 +21,9 @@ Game::Game()
 
 	SpawnLogLane(Logs::LOG_TYPE::turtle1, 5, 486, 30, 30, 130, -1.0f, 6, 3, 30);
 	SpawnLogLane(Logs::LOG_TYPE::log2, 5, 486, 50, 30, 130, 1.0f, 7, 1, 0);
-	SpawnLogLane(Logs::LOG_TYPE::log1, 3, 486, 150, 30, 220, 2.0f, 8, 1, 0);
+	SpawnLogLane(Logs::LOG_TYPE::log1, 3, 486, 150, 30, 220, 1.7f, 8, 1, 0);
 	SpawnLogLane(Logs::LOG_TYPE::turtle2, 5, 486, 30, 30, 130, -1.0f, 9, 2, 30);
-	SpawnLogLane(Logs::LOG_TYPE::log3, 5, 486, 100, 30, 130, 1.3f, 10, 1, 0);
+	SpawnLogLane(Logs::LOG_TYPE::log3, 4, 486, 100, 30, 170, 1.3f, 10, 1, 0);
 
 	for (int i = 0; i < 5; i++)
 	{
