@@ -13,10 +13,14 @@ public:
 
 	void Update();
 
+	// Vérifie si frog est activée
 	bool GetIsActive() { return isActive; }
+
+	// Set la frog active à true ou false
 	void SetIsActive(bool isActive) { this->isActive = isActive; }
 
-	void SetMatchingSpeed(float speed){ matchingSpeed = speed; }
+	// Speed de frog devient speed de logs
+	void SetMatchingSpeed(float speed){ matchingSpeed = speed; } 
 
 	void Die();
 	void Spawn();

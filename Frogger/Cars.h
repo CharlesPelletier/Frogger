@@ -21,6 +21,7 @@ private:
 	static std::string CAR4_PATH;
 	static std::string TRUCK_PATH;
 
+	// size des cars
 	static const int CAR_SQUARED_SIZE = 30;
 	static const int TRUCK_SIZE_X = 50;
 	static const int TRUCK_SIZE_Y = 30;

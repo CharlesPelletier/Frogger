@@ -144,33 +144,26 @@ void Game::Update()
 	{
 		if (frogs[currentFrog]->GetRect()->CollidesWith(victories[i]->GetRect()))
 		{
-			//Place la frog exactement au milieu du nénuphar
-			//frogs[currentFrog]->SetPosition(victories[i]->GetX(), victories[i]->GetY());
+			// Fait apparaitre la frog sur le nénuphar
 			std::cout << "Nenuphar touched" << std::endl;;
 
 			victories[i]->SetVisible(true);
 
+			//SetGameOver();
+
 			frogs[currentFrog]->SetIsActive(false);
 			frogs[currentFrog]->SetVisible(false);
 			frogs[currentFrog]->SetMatchingSpeed(0.f);
-
-			//currentFrog++;
-			//frogs[currentFrog]->SetVisible(true);
-			//frogs[currentFrog]->SetIsActive(true);
 			
-			//if (currentFrog >= numOfFrog)
-			//{
-			//	SetGameOver();
-			//}
-
-			//Vérifie s'il reste des vies 
+			// Vérifie s'il reste des vies 
 			if (currentFrog <= numOfFrog)
 			{
 				currentFrog++;
 				frogs[currentFrog]->SetVisible(true);
 				frogs[currentFrog]->SetIsActive(true);
 			}
-			// Sinon, GameOver
+			
+			//Sinon, GameOver
 			else
 			{
 				SetGameOver();

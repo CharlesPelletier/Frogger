@@ -6,6 +6,7 @@ Obstacle::Obstacle()
 	rect = new Rectangle();
 }
 
+// Set le path et la position d'un obstacle
 Obstacle::Obstacle(std::string path, float posX, float posY)
 	: Sprite(path)
 {
@@ -13,6 +14,7 @@ Obstacle::Obstacle(std::string path, float posX, float posY)
 	rect = new Rectangle(GetX(), GetY(), 0.f, 0.f );
 }
 
+// Set le path, la position et la grosseur du rectangle d'un obstacle
 Obstacle::Obstacle(std::string path, float posX, float posY, float sizeX, float sizeY)
 	: Sprite(path)
 {
@@ -20,6 +22,7 @@ Obstacle::Obstacle(std::string path, float posX, float posY, float sizeX, float 
 	rect = new Rectangle(GetX(), GetY(), sizeX, sizeY);
 }
 
+// Set la position et la grosseur du rectangle d'un obstacle
 Obstacle::Obstacle(float posX, float posY, float sizeX, float sizeY)
 	: Sprite()
 {
@@ -32,6 +35,7 @@ Obstacle::~Obstacle()
 	delete rect;
 }
 
+// Actualise la position du rectangle
 void Obstacle::Update()
 {
 	rect->SetPosition(GetX(), GetY());

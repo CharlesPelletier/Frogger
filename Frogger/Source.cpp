@@ -7,7 +7,7 @@ int main(int argc, char* args[])
 	// Initialise la taille de l'écran
 	Engine::GetInstance()->Init(516, 560);
 
-	// Création du partie
+	// Création d'une partie
 	Game* game = new Game();
 
 	// Commence la boucle de jeu

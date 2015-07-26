@@ -12,4 +12,3 @@ public:
 	Victory(Vector2D& startPos, Vector2D& size);
 	~Victory();
 };
-

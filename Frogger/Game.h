@@ -15,12 +15,13 @@ public:
 	void Update();
 
 private:
-	static const int laneOffsetY = 36;
+	static const int laneOffsetY = 36; // largeur des lanes
 
 	Sprite* menu;
 	bool gameOver;
 	int currentFrog;
 	int numOfFrog;
+
 	std::vector<Cars*> cars;
 	std::vector<Logs*> logs;
 	std::vector<Frog*> frogs;

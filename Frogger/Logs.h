@@ -13,7 +13,7 @@ public:
 
 	void Update();
 
-	float GetSpeed() { return speed; }
+	float GetSpeed() { return speed; } // Vitesse des logs et turtles
 
 private:
 	static std::string TURTLE1_PATH;
@@ -22,6 +22,7 @@ private:
 	static std::string TURTLE2_PATH;
 	static std::string LOG3_PATH;
 
+	// size des logs et turtles
 	static const int TURTLE_SQUARED_SIZE = 30;
 	static const int LOG1_SIZE_X = 50;
 	static const int LOG1_SIZE_Y = 30;

@@ -44,6 +44,7 @@ void Frog::Update()
 	Obstacle::Update();
 }
 
+// Tue la frog
 void Frog::Die()
 {
 	isActive = false;
@@ -51,6 +52,7 @@ void Frog::Die()
 	//SetTexture("SplatSanguin")
 }
 
+// Spawn la frog
 void Frog::Spawn()
 {
 	isActive = true;
