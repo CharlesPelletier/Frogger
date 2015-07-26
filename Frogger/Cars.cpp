@@ -1,5 +1,6 @@
 #include "Cars.h"
 
+// path pour les textures des cars
 std::string Cars::CAR1_PATH = "Images/car1.png";
 std::string Cars::CAR2_PATH = "Images/car2.png";
 std::string Cars::CAR3_PATH = "Images/car3.png";
@@ -39,8 +40,10 @@ void Cars::Update()
 {
 	Obstacle::Update();
 
-	SetPosition(GetX() + speed, GetY());
+	// Position et vitesse des cars
+	//SetPosition(GetX() + speed, GetY());
 
+	// Si un cars quitte l'écran, réapparait de l'autre côté
 	if (speed > 0)
 	{
 		if (GetX() >= 516)

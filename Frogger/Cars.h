@@ -6,6 +6,7 @@ class Cars :
 	public Obstacle
 {
 public:
+	// énumération des types de cars
 	enum CAR_TYPE { car1, car2, car3, car4, truck};
 
 	Cars(CAR_TYPE type, float speed, Vector2D& startPos, Vector2D& size);

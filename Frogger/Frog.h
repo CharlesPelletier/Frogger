@@ -13,8 +13,9 @@ public:
 
 	void Update();
 
-	//bool GetIsActive() { return isActive; }
-	//void SetIsActive(bool isActive) { this->isActive = isActive; }
+	bool GetIsActive() { return isActive; }
+	void SetIsActive(bool isActive) { this->isActive = isActive; }
+
 	void SetMatchingSpeed(float speed){ matchingSpeed = speed; }
 
 	void Die();

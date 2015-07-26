@@ -1,5 +1,6 @@
 #include "Logs.h"
 
+// path pour les textures des cars
 std::string Logs::TURTLE1_PATH = "Images/turtle1.png";
 std::string Logs::LOG2_PATH = "Images/log1.png";
 std::string Logs::LOG1_PATH = "Images/log2.png";
@@ -39,8 +40,11 @@ Logs::~Logs()
 void Logs::Update()
 {
 	Obstacle::Update();
+
+	// Position et vitesse des logs et turtles
 	SetPosition(GetX() + speed, GetY());
 
+	// Si un log ou turtle quitte l'écran, réapparait de l'autre côté
 	if (speed > 0)
 	{
 		if (GetX() >= 516)

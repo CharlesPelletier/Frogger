@@ -75,6 +75,7 @@
     <ClCompile Include="Logs.cpp" />
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Victory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cars.h" />
@@ -82,6 +83,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Logs.h" />
     <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="Victory.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\bart-sdl-engine-e15\dependencies\TP1_Library\TP1_Library.vcxproj">
