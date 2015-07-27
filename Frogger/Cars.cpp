@@ -41,7 +41,7 @@ void Cars::Update()
 	Obstacle::Update();
 
 	// Position et vitesse des cars
-	//SetPosition(GetX() + speed, GetY());
+	SetPosition(GetX() + speed, GetY());
 
 	// Si un cars quitte l'écran, réapparait de l'autre côté
 	if (speed > 0)
